@@ -25,6 +25,7 @@ export const actions = {
       firstName: zfd.text(),
       lastName: zfd.text(),
       email: zfd.text(),
+      username: zfd.text(),
     });
 
     const { data } = schema.safeParse(await request.formData());
@@ -37,6 +38,7 @@ export const actions = {
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
+      username: data.username,
     }).where(eq(profileTable.id, userProfile.id));
 
     return { success: true };

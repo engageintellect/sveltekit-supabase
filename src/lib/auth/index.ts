@@ -23,6 +23,7 @@ export const getOrCreateUserProfile = async (locals: App.Locals) => {
     firstName: "",
     lastName: "",
     email: user.email ?? "",
+    username:"",
   });
 
   const newProfile = await db.query.profileTable.findFirst({
@@ -35,3 +36,4 @@ export const getOrCreateUserProfile = async (locals: App.Locals) => {
 
   return newProfile;
 };
+

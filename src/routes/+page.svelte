@@ -7,7 +7,7 @@
 </script>
 
 {#if userProfile}
-	<UpdateProfile {userProfile} />
+	<UpdateProfile {userProfile} avatar={data?.user?.user_metadata.avatar_url} />
 {:else}
 	<Hero />
 {/if}

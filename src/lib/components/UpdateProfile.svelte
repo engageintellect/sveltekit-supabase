@@ -7,6 +7,7 @@
 	import Label from '$lib/components/ui/label/label.svelte';
 
 	export let userProfile;
+	export let avatar;
 </script>
 
 <Card.Root class="mx-auto max-w-md">
@@ -15,6 +16,15 @@
 		<Card.Description>Update your profile information</Card.Description>
 	</Card.Header>
 	<Card.Content>
+		{#if avatar}
+			<div class="flex justify-start">
+				<img
+					src={avatar}
+					alt="profile image"
+					class="mb-5 h-24 w-24 rounded-lg object-cover shadow"
+				/>
+			</div>
+		{/if}
 		<form
 			method="post"
 			use:enhance={({ formData }) => {

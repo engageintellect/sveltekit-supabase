@@ -93,6 +93,8 @@ supabase link --project-ref <YOUR_PROJECT_ID>
 supabase db push
 ```
 
+Pull requests that change a Supabase migration run [RattleCheck](.github/workflows/rattlecheck.yml). It compares the SQL with the base branch and flags new high or critical permission findings before you run `supabase db push`. It needs no database credentials.
+
 ### Client
 
 1. Create a new project on Vercel
